@@ -1,0 +1,43 @@
+Customer Support System with Email Notification - Project Guide
+This document outlines the steps to create a Customer Support System using Django. The system will allow users to submit support tickets, which will send an email notification to the support team.
+
+✅ Prerequisites
+Python (3.8 or higher)
+Django (5.x)
+Gmail account for sending emails
+Bootstrap for UI
+🧱 Project Setup
+Install Django using pip install django.
+Create a new Django project using django-admin startproject support_system.
+Navigate to the project directory using cd support_system.
+Create a Django app using python manage.py startapp support.
+Add the app to INSTALLED_APPS in the settings.py file.
+📧 Configure Email Settings
+Enable 2-Step Verification in your Google Account.
+Generate an App Password by selecting Mail as the app type and providing a name.
+Copy the 16-character App Password.
+In settings.py, configure email settings using your Gmail address and the generated App Password.
+📦 Create the Model
+Define a SupportTicket model with fields for name, email, subject, message, status, and created_at timestamp.
+Apply migrations using python manage.py makemigrations and python manage.py migrate.
+📝 Create the Form
+Create a SupportForm using Django's ModelForm.
+Use it to capture user input for support ticket submissions.
+🛎 Create Views
+Define a submit_ticket view that handles GET and POST requests.
+On form submission, save the ticket and send an email notification using send_mail().
+Render a success page on successful submission.
+🚦 Configure URLs
+Create a urls.py file in the app directory.
+Define a URL path for submitting support tickets and map it to the view.
+Include the app’s URLs in the project's main urls.py file.
+🎨 Create Templates
+Create a templates/support folder.
+Add submit_ticket.html for the support form using Bootstrap for styling.
+Add success.html for displaying the confirmation message.
+🧪 Run the Project
+Start the development server using python manage.py runserver.
+Access the application at http://localhost:8000/submit/.
+Fill out and submit the form.
+Check the Gmail inbox of the support team for the email notification.
+For admin panel use http://localhost:8000/admin/
